@@ -1,0 +1,43 @@
+#include <stdio.h>
+
+int n, e[10][10], visited[10];
+
+void closure(int s)
+{
+    int i;
+
+    visited[s]=1;
+    printf("q%d ",s);
+
+    for(i=0;i<n;i++)
+    {
+        if(e[s][i]==1 && !visited[i])
+            closure(i);
+    }
+}
+
+int main()
+{
+    int i,j;
+
+    printf("Enter number of states: ");
+    scanf("%d",&n);
+
+    printf("Enter epsilon transition matrix:\n");
+
+    for(i=0;i<n;i++)
+        for(j=0;j<n;j++)
+            scanf("%d",&e[i][j]);
+
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<n;j++)
+            visited[j]=0;
+
+        printf("\nEpsilon Closure(q%d) = { ",i);
+        closure(i);
+        printf("}");
+    }
+
+    return 0;
+}
