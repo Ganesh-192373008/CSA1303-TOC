@@ -8,6 +8,11 @@
 5. CFG: S → 0S0 | A
 6. CFG: S → 0S1 | ε
 7. CFG: S → A101A
+8. NFA for strings starting with 'b' and ending with 'a'
+9. NFA for binary strings starting with '0' and ending with '1'
+10. ε-Closure for all states in an NFA with ε-moves
+11. ε-Closure for all states in an NFA with ε-moves (using DFS)
+
 
 Language Used:
 - C
